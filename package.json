@@ -19,7 +19,6 @@
     "electron-packager": "^13.0.1"
   },
   "dependencies": {
-    "base64-img": "^1.0.4",
     "jspdf": "^1.5.3"
   }
 }
