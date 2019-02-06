@@ -25,8 +25,8 @@ app.on('activate', function () {
 });
 
 function createWindow(url) {
-    mainWindow = new BrowserWindow(this.windowConfig.browserWindowOptions);
-    mainWindow.loadUrl(url);
+    mainWindow = new BrowserWindow();
+    mainWindow.loadURL(url);
     mainWindow.webContents.openDevTools({ mode: "undocked"});
 
-  }
+}
