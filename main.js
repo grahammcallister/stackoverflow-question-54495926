@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 
 let mainWindow;
-let url = "https://www.google.com";
+let url = "index.html";
 
 app.on('ready', () => {
   createWindow(url);
@@ -25,8 +25,11 @@ app.on('activate', function () {
 });
 
 function createWindow(url) {
-    mainWindow = new BrowserWindow();
-    mainWindow.loadURL(url);
-    mainWindow.webContents.openDevTools({ mode: "undocked"});
-
+  mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration : true
+    }
+  });
+  mainWindow.loadFile(url);
+  mainWindow.webContents.openDevTools({ mode: "undocked"});
 }
